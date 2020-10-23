@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="UI5Map.db.views::AdminDivisions" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="AdminDivisions"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="UI5Map.db.tablefunctions::AdminDivisions" type="TABLE_FUNCTION">
+    <resourceUri>UI5Map.db.tablefunctions::AdminDivisions</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="UI5Map.db.tablefunctions::AdminDivisions">
+  <attributes>
+    <attribute id="AdminDivCode" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AdminDivCode"/>
+      <keyMapping columnObjectName="AdminDivisions" columnName="AdminDivCode"/>
+    </attribute>
+    <attribute id="AdminDivName" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="AdminDivName"/>
+      <keyMapping columnObjectName="AdminDivisions" columnName="AdminDivName"/>
+    </attribute>
+    <attribute id="CountryCode" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CountryCode"/>
+      <keyMapping columnObjectName="AdminDivisions" columnName="CountryCode"/>
+    </attribute>
+    <attribute id="Type" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Type"/>
+      <keyMapping columnObjectName="AdminDivisions" columnName="Type"/>
+    </attribute>
+    <attribute id="Shape" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Shape"/>
+      <keyMapping columnObjectName="AdminDivisions" columnName="Shape"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

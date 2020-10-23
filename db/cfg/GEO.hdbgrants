@@ -1,0 +1,14 @@
+{
+  "ServiceName_1": {
+    "object_owner": {
+      "roles": [
+        "GEO_CONTAINER_ACCESS"
+      ]
+    }, 
+    "application_user": {
+      "roles": [
+        "GEO_CONTAINER_ACCESS"
+      ]
+    }
+  }
+}

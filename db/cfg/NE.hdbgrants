@@ -1,0 +1,14 @@
+{
+  "ServiceName_2": {
+    "object_owner": {
+      "roles": [
+        "NE_CONTAINER_ACCESS"
+      ]
+    }, 
+    "application_user": {
+      "roles": [
+        "NE_CONTAINER_ACCESS"
+      ]
+    }
+  }
+}

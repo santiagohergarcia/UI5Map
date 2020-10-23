@@ -1,0 +1,48 @@
+<mvc:View controllerName="ui5.ui5.controller.Country.Country" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.f" xmlns:vbm="sap.ui.vbm" xmlns:vk="sap.ui.vk">
+	<f:DynamicPage modelContextChange="onModelCtxChange">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:breadcrumbs>
+					<Breadcrumbs currentLocationText="{CountryName} ({CountryCode})">
+						<Link text="{i18n>World}"/>
+					</Breadcrumbs>
+				</f:breadcrumbs>
+				<f:heading>
+					<Title text="{CountryName}"/>
+				</f:heading>
+				<f:navigationActions>
+					<OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="onFullScreen"
+						visible="{= ${view>/fcl/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
+					<OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="onExitFullScreen"
+						visible="{= ${view>/fcl/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
+					<OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="onClose"
+						visible="{= ${view>/fcl/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
+				</f:navigationActions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<Panel height="100%" expanded="true">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Title text="{i18n>AdminDivisions}"/>
+						<ToolbarSpacer/>
+						<SearchField width="300px" visible="{= ${view>/country/mode} === 'LIST' }" liveChange="onSearchLiveChange"/>
+						<SegmentedButton selectedKey="{view>/country/mode}" selectionChange="onModeSelChange">
+							<items>
+								<SegmentedButtonItem key="MAP" icon="sap-icon://choropleth-chart"/>
+								<SegmentedButtonItem key="LIST" icon="sap-icon://list"/>
+							</items>
+						</SegmentedButton>
+					</OverflowToolbar>
+				</headerToolbar>
+				<List id="admDivList" visible="{= ${view>/country/mode} === 'LIST' }" items="{path: 'AdminDivisions', sorter: {path: 'AdminDivName'} }"
+					class="sapFDynamicPageAlignContent">
+					<ObjectListItem intro="{Type}" title="{AdminDivName}" type="Navigation"/>
+				</List>
+				<vk:MapContainer id="countryMapCont" visible="{= ${view>/country/mode} === 'MAP' }" autoAdjustHeight="true" showSelection="false"
+					showSettings="false"></vk:MapContainer>
+			</Panel>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

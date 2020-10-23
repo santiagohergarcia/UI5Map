@@ -1,0 +1,42 @@
+<mvc:View controllerName="ui5.ui5.controller.World.World" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.f" xmlns:vbm="sap.ui.vbm" xmlns:vk="sap.ui.vk">
+	<f:DynamicPage>
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="{i18n>World}"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<Panel height="100%" expanded="true">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>Countries}"/>
+						<ToolbarSpacer/>
+						<SearchField width="300px" visible="{= ${view>/world/mode} === 'LIST' }" liveChange="onSearchLiveChange"></SearchField>
+						<SegmentedButton selectedKey="{view>/world/mode}">
+							<items>
+								<SegmentedButtonItem key="MAP" icon="sap-icon://choropleth-chart"/>
+								<SegmentedButtonItem key="LIST" icon="sap-icon://list"/>
+							</items>
+						</SegmentedButton>
+						<Button text="aa" press="onPress"/>
+					</Toolbar>
+				</headerToolbar>
+				<List id="countriesList" visible="{= ${view>/world/mode} === 'LIST' }" items="{path: '/Countries', sorter: {path: 'CountryCode'}}"
+					class="sapFDynamicPageAlignContent">
+					<ObjectListItem intro="{CountryCode}" title="{CountryName}" type="Navigation" press="onPressCountry"/>
+				</List>
+				<VBox id="worldMapCont" width="100%">
+					<vbm:AnalyticMap id="worldMap" regionSelect="onCountrySelect" visible="{= ${view>/world/mode} === 'MAP' }" width="100%"
+						regions="{ path:'/Countries', length: 1000, events: {dataRequested: '.onMapRegionsDataRequested',dataReceived: '.onMapRegionsDataReceived'} }">
+						<vbm:regions>
+							<vbm:Region code="{CountryCode}" tooltip="{CountryName}"/>
+						</vbm:regions>
+					</vbm:AnalyticMap>
+				</VBox>
+			</Panel>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

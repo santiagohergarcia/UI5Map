@@ -1,0 +1,26 @@
+{
+  "UI5Map.db.synonyms::GADM_L0": {
+    "target": {
+      "object": "GADM_L0",
+      "schema": "GADM"
+    }
+  },
+  "UI5Map.db.synonyms::GADM_L1": {
+    "target": {
+      "object": "GADM_L1",
+      "schema": "GADM"
+    }
+  },
+  "UI5Map.db.synonyms::GADM_L2": {
+    "target": {
+      "object": "GADM_L2",
+      "schema": "GADM"
+    }
+  },
+  "UI5Map.db.synonyms::GADM_L3": {
+    "target": {
+      "object": "GADM_L3",
+      "schema": "GADM"
+    }
+  }
+}

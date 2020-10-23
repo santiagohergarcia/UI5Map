@@ -1,0 +1,14 @@
+{
+	"xsappname": "UI5Map",
+	"scopes": [{
+		"name": "$XSAPPNAME.Display",
+		"description": "Display Scope"
+	}],
+	"role-templates": [{
+		"name": "DisplayRole",
+		"description": "Display Role",
+		"scope-references": [
+			"$XSAPPNAME.Display"
+		]
+	}]
+}

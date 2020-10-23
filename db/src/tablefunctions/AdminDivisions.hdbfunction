@@ -1,0 +1,18 @@
+FUNCTION "UI5Map.db.tablefunctions::AdminDivisions"( )
+       RETURNS TABLE ( 
+       	"CountryCode" NVARCHAR(80), 
+	   	"AdminDivCode" NVARCHAR(80), 
+	   	"AdminDivName" NVARCHAR(80),
+	   	"Type" NVARCHAR(80),
+		"Shape" ST_GEOMETRY(4326) )  
+       LANGUAGE SQLSCRIPT 
+       SQL SECURITY INVOKER AS 
+BEGIN 
+    RETURN SELECT
+		"GID_0" as "CountryCode",
+		"GID_1" as "AdminDivCode",
+		"NAME_1" as "AdminDivName",
+		"ENGTYPE_1" as "Type",
+		"SHAPE".ST_Simplify(0.005) as "Shape"
+		FROM "UI5Map.db.synonyms::GADM_L1";
+END;

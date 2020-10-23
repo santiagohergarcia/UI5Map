@@ -1,0 +1,24 @@
+service {
+	
+	"UI5Map.db.views::Countries" 
+	as "Countries" 
+	without ("Shape") 
+	key ("CountryCode")
+	navigates ("CountriesToAdmDivisions" as "AdminDivisions");
+	
+	"UI5Map.db.views::AdminDivisions" 
+	as "AdminDivisions" 
+	without ("Shape") 
+	key ("AdminDivCode");
+	
+	association "CountriesToAdmDivisions"
+	principal "Countries"("CountryCode")
+	multiplicity "1"
+	dependent "AdminDivisions"("CountryCode")
+	multiplicity "*";
+}
+
+
+
+
+

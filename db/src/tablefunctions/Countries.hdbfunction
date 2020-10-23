@@ -1,0 +1,14 @@
+FUNCTION "UI5Map.db.tablefunctions::Countries"( )
+   RETURNS TABLE ( 
+   	"CountryCode" NVARCHAR(80), 
+   	"CountryName" NVARCHAR(80),
+	"Shape" ST_GEOMETRY(4326)) 
+   LANGUAGE SQLSCRIPT 
+   SQL SECURITY INVOKER AS 
+BEGIN 
+	RETURN SELECT
+		"GID_0" as "CountryCode",
+		"NAME_0" as "CountryName",
+		"SHAPE".ST_Simplify(0.05) as "Shape"
+		FROM "UI5Map.db.synonyms::GADM_L0";
+END;

@@ -1,0 +1,5 @@
+<mvc:View controllerName="ui5.ui5.controller.App" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true"
+	xmlns="sap.m" xmlns:f="sap.f" height="100%">
+	<f:FlexibleColumnLayout autoFocus="false" id="fcl" stateChange="onStateChanged" restoreFocusOnBackNavigation="true" layout="{view>/fcl/layout}"
+		backgroundDesign="Translucent"/>
+</mvc:View>

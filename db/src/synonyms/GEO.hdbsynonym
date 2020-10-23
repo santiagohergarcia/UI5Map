@@ -1,0 +1,14 @@
+{
+  "UI5Map.db.synonyms::gis_osm_places_a_free_1": {
+    "target": {
+      "object": "gis_osm_places_a_free_1",
+      "schema": "GEO"
+    }
+  },
+  "UI5Map.db.synonyms::gis_osm_places_free_1": {
+    "target": {
+      "object": "gis_osm_places_free_1",
+      "schema": "GEO"
+    }
+  }
+}

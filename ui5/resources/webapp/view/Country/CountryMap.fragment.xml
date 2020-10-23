@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:vbm="sap.ui.vbm" xmlns:vk="sap.ui.vk">
+	<vk:ContainerContent>
+		<vk:content>
+			<vbm:AnalyticMap id="countryMap" busyIndicatorDelay="0" regionSelect="onAdmDivSelect" regions="{ path:'AdminDivisions', length: 1000 }">
+				<vbm:regions>
+					<vbm:Region code="{AdminDivCode}" tooltip="{AdminDivName}"/>
+				</vbm:regions>
+			</vbm:AnalyticMap>
+		</vk:content>
+	</vk:ContainerContent>
+</core:FragmentDefinition>

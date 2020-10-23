@@ -1,0 +1,26 @@
+{
+  "UI5Map.db.synonyms::ADMIN_DIVISIONS": {
+    "target": {
+      "object": "ADMIN_DIVISIONS",
+      "schema": "NE"
+    }
+  },
+  "UI5Map.db.synonyms::COUNTRIES": {
+    "target": {
+      "object": "COUNTRIES",
+      "schema": "NE"
+    }
+  },
+  "UI5Map.db.synonyms::POPULATED_PLACES": {
+    "target": {
+      "object": "POPULATED_PLACES",
+      "schema": "NE"
+    }
+  },
+  "UI5Map.db.synonyms::ADMIN_DIVISION_DETAILS": {
+    "target": {
+      "object": "ADMIN_DIVISION_DETAILS",
+      "schema": "NE"
+    }
+  }
+}
